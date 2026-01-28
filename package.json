@@ -1,0 +1,16 @@
+{
+  "name": "scarce-pay",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint"
+  },
+  "devDependencies": {
+    "turbo": "^2.7.6"
+  },
+  "packageManager": "pnpm@10.19.0",
+  "engines": {
+    "node": ">=18"
+  }
+}
