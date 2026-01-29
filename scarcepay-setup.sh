@@ -95,9 +95,6 @@ POSTGRES_USER=postgres
 POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 POSTGRES_DB=scarcepay
 
-# Database URL for the API
-DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/scarcepay
-
 # NEAR Intents API Key (required for payment processing)
 # Get your key at: https://1click.chaindefuser.com
 NEAR_INTENTS_API_KEY=
@@ -126,7 +123,7 @@ print_status "Using existing docker-compose.yml configuration"
 
 # Build and start services
 print_status "Building Docker images..."
-if ! docker compose build; then
+if ! docker compose build --parallel; then
     print_error "Docker build failed. Check the output above for details."
     echo ""
     echo "Common issues:"

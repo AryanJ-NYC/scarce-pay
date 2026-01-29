@@ -5,6 +5,12 @@ Self-hosted, multi-chain crypto invoicing system. Accept payments in any cryptoc
 ## Pre-requisites
 
 **For Deployment:**
+
+**Hardware (VPS/Server):**
+- RAM: 1 GB minimum, 2 GB recommended
+- CPU: 1 vCPU minimum, 2 vCPUs recommended
+- Disk: 10 GB minimum, 20 GB recommended
+
 - [Docker](https://docs.docker.com/engine/install/) (with Docker Compose)
 - A domain name pointed to your server's IP
 
@@ -33,7 +39,23 @@ Point your DNS to the server, and you're live at `https://pay.example.com`.
 ## Development
 
 ```bash
+# 1. Install dependencies
 pnpm install
+
+# 2. Start PostgreSQL
+docker run -d --name scarcepay-db \
+  -e POSTGRES_PASSWORD=postgres \
+  -e POSTGRES_DB=scarcepay \
+  -p 5432:5432 \
+  postgres:17-alpine
+
+# 3. Set up environment
+cp apps/api/.env.example apps/api/.env
+
+# 4. Run database migrations
+pnpm --filter @scarce-pay/api db:migrate
+
+# 5. Start dev servers
 pnpm dev
 ```
 

@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
     environment:
       - NODE_ENV=production
-      - DATABASE_URL=${DATABASE_URL}
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-scarcepay}
       - NEAR_INTENTS_API_KEY=${NEAR_INTENTS_API_KEY}
     depends_on:
       postgres:

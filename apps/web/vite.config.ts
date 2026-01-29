@@ -16,7 +16,14 @@ const config = defineConfig({
   },
   plugins: [
     devtools(),
-    nitro(),
+    nitro({
+      devProxy: {
+        '/api/**': {
+          target: 'http://localhost:3001',
+          changeOrigin: true,
+        },
+      },
+    }),
     // this is the plugin that enables path aliases
     viteTsConfigPaths({
       projects: ['./tsconfig.json'],
