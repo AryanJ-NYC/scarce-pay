@@ -22,6 +22,7 @@ print_error() {
 
 # Check if running with -i flag (install mode)
 INSTALL_MODE=false
+OPTIND=1  # Reset getopts for sourced scripts
 while getopts "i" opt; do
     case $opt in
         i) INSTALL_MODE=true ;;

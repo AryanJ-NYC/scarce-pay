@@ -2,6 +2,16 @@
 
 Self-hosted, multi-chain crypto invoicing system. Accept payments in any cryptocurrency and settle to your own wallets.
 
+## Pre-requisites
+
+**For Deployment:**
+- [Docker](https://docs.docker.com/engine/install/) (with Docker Compose)
+- A domain name pointed to your server's IP
+
+**For Development:**
+- Node.js 22+
+- pnpm
+
 ## 1-Click Deployment
 
 ```bash
@@ -48,7 +58,6 @@ scarce-pay/
 ├── apps/
 │   ├── api/     # Hono backend
 │   └── web/     # TanStack Start frontend
-├── packages/    # Shared configs
 ├── scarcepay-setup.sh
 └── docker-compose.yml
 ```
