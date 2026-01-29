@@ -18,7 +18,7 @@ COPY --from=build /app/apps/api/dist /app/dist
 COPY --from=build /app/apps/api/prisma /app/prisma
 WORKDIR /app
 EXPOSE 3001
-CMD ["sh", "-c", "npx prisma migrate deploy && node dist/index.js"]
+CMD ["sh", "-c", "npx prisma migrate deploy --schema=./prisma/schema.prisma && node dist/index.js"]
 
 FROM base AS web
 COPY --from=build /prod/web /app
