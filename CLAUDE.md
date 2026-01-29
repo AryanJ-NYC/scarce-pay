@@ -30,6 +30,9 @@ export SCARCEPAY_HOST="pay.example.com"
 
 # Local Docker (development)
 docker compose up
+
+# Faster Docker rebuilds (parallel builds)
+docker compose build --parallel
 ```
 
 ### App-specific commands

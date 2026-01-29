@@ -123,7 +123,7 @@ print_status "Using existing docker-compose.yml configuration"
 
 # Build and start services
 print_status "Building Docker images..."
-if ! docker compose build; then
+if ! docker compose build --parallel; then
     print_error "Docker build failed. Check the output above for details."
     echo ""
     echo "Common issues:"
