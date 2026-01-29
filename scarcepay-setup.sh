@@ -95,9 +95,6 @@ POSTGRES_USER=postgres
 POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 POSTGRES_DB=scarcepay
 
-# Database URL for the API
-DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/scarcepay
-
 # NEAR Intents API Key (required for payment processing)
 # Get your key at: https://1click.chaindefuser.com
 NEAR_INTENTS_API_KEY=
