@@ -5,6 +5,12 @@ Self-hosted, multi-chain crypto invoicing system. Accept payments in any cryptoc
 ## Pre-requisites
 
 **For Deployment:**
+
+**Hardware (VPS/Server):**
+- RAM: 1 GB minimum, 2 GB recommended
+- CPU: 1 vCPU minimum, 2 vCPUs recommended
+- Disk: 10 GB minimum, 20 GB recommended
+
 - [Docker](https://docs.docker.com/engine/install/) (with Docker Compose)
 - A domain name pointed to your server's IP
 
